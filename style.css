@@ -1,37 +1,95 @@
-html {
+/* Reset styles */
+html, body {
   height: 100%;
   width: 100%;
+  margin: 0;
+  padding: 0;
   font-family: "Titillium Web", sans-serif;
 }
 
 body {
-  min-height: 100%;
-  min-width: 100%;
-  background: linear-gradient(pink, violet);
-}
-
-button {
-  font-size: 7px;
-}
-
-#main-content {
-  position: relative;
   display: flex;
   justify-content: center;
   align-items: center;
-  flex-direction: column;
+  min-height: 100%;
+  margin: 0;
+}
+
+/* Customize button style */
+button {
+  font-size: 14px;
+  padding: 10px 20px;
+  border: none;
+  cursor: pointer;
+  background-color: #333;
+  color: white;
+  border-radius: 5px;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+button:hover {
+  background-color: #444;
+}
+
+/* Customize main content and list */
+#main-content, #list {
+
+  padding: 20px;
   border: 1px solid #333;
-  background: rgba(255, 255, 255, 0.3);
-  padding: 15px 20px 18px 18px;
+  background: rgba(255, 255, 255, 0.95);
   border-radius: 5px;
   box-shadow: 2px 5px 5px #333;
+  margin: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 #list {
-  margin: 10px;
+  overflow-y: auto;
+}
+
+form {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+input[type="text"] {
+  flex: 1;
+  padding: 10px;
+  margin-right: 10px;
   border: 1px solid #333;
-  background: rgba(255, 255, 255, 0.75);
-  padding: 15px 20px 18px 18px;
   border-radius: 5px;
-  box-shadow: 2px 5px 5px #333;
+}
+
+label {
+  flex: 0 0 100px; /* Fixed width for label */
+}
+
+select {
+  padding: 10px;
+  border: 1px solid #333;
+  border-radius: 5px;
+  background-color: white;
+}
+
+#tasks {
+  display: flex;
+  flex-direction: column; /* To stack tasks vertically */
+  gap: 10px; /* Equal spacing between tasks */
+}
+#tasks li {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px;
+  background-color: #f5f5f5;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+}
+
+#tasks li .task-description {
+  flex: 1; /* Take up remaining space */
+  margin-right: 10px; /* Add space to the right of the description */
 }
